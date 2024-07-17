@@ -39,6 +39,7 @@ dependencies:
   animate_do: ^3.3.4
   dio: ^5.5.0+1
   shared_preferences: ^2.2.3
+  speech_to_text: ^6.6.2
 
 dev_dependencies:
   flutter_test:
