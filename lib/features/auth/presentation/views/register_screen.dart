@@ -140,7 +140,7 @@ class SignupScreen extends StatelessWidget {
                     duration: 600,
                     child: AppDefaultButton(
                       onTap: () {
-                        context.pushName(Routes.homeScreen);
+                        context.pushAndRemoveUntil(Routes.homeScreen);
                       },
                       title: 'Sign Up',
                     ),
@@ -148,7 +148,7 @@ class SignupScreen extends StatelessWidget {
                   AppDefaultTextButton(
                     size: 14,
                     onPressed: () {
-                      context.pushName(Routes.loginScreen);
+                      context.pushReplacementNamed(Routes.loginScreen);
                     },
                     title: 'ِAlready have  an account ?',
                   ),

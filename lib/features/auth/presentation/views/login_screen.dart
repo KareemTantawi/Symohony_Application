@@ -102,6 +102,7 @@ class LoginScreen extends StatelessWidget {
                       child: AppDefaultButton(
                         onTap: () {
                           defaultShowDialogApp(context);
+                          context.pushAndRemoveUntil(Routes.homeScreen);
                         },
                         title: 'Login',
                       ),
@@ -110,7 +111,7 @@ class LoginScreen extends StatelessWidget {
                       child: AppDefaultTextButton(
                         onPressed: () {
                           // context.pushName(AppRoutes.signupScreen);
-                          context.pushName(Routes.registerScreen);
+                          context.pushReplacementNamed(Routes.registerScreen);
                         },
                         title: "Don't  have  an account ?",
                         size: 14,

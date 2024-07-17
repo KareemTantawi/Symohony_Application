@@ -76,7 +76,7 @@ class ForgetPassScreen extends StatelessWidget {
               duration: 600,
               child: AppDefaultButton(
                 onTap: () {
-                  context.pushName(Routes.resetPasswordScreen);
+                  context.pushReplacementNamed(Routes.resetPasswordScreen);
                 },
                 title: 'Send',
               ),

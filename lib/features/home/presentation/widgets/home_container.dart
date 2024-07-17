@@ -13,12 +13,11 @@ class HomeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: context.height * .4,
       width: double.infinity,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(36),
-          bottomRight: Radius.circular(36),
+          bottomLeft: Radius.circular(36.r),
+          bottomRight: Radius.circular(36.r),
         ),
       ),
       child: Stack(
@@ -44,7 +43,7 @@ class HomeContainer extends StatelessWidget {
                         width: 45.w,
                       ),
                     ),
-                    horizontalSpace(200),
+                    const Spacer(),
                     Icon(
                       Icons.notifications_none,
                       color: Colors.white,
@@ -62,47 +61,55 @@ class HomeContainer extends StatelessWidget {
                   ],
                 ),
                 verticalSpace(20),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Welcome Back!',
-                            style: TextStyle(
-                              fontSize: 24.sp,
-                              fontWeight: FontWeightHelper.semiBold,
-                              color: Colors.white,
-                              fontFamily: FontFamilyHelper.fontFamily1,
+                IntrinsicHeight(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Welcome Back!',
+                              style: TextStyle(
+                                fontSize: 24.sp,
+                                fontWeight: FontWeightHelper.semiBold,
+                                color: Colors.white,
+                                fontFamily: FontFamilyHelper.fontFamily1,
+                              ),
                             ),
-                          ),
-                          verticalSpace(6),
-                          Text(
-                            'EmailExample@gmail.com',
-                            style: TextStyle(
-                              fontSize: 11.sp,
-                              fontWeight: FontWeightHelper.semiBold,
-                              color: Colors.white.withOpacity(0.7),
-                              fontFamily: FontFamilyHelper.fontFamily1,
+                            verticalSpace(6),
+                            Text(
+                              'EmailExample@gmail.com',
+                              style: TextStyle(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeightHelper.semiBold,
+                                color: Colors.white.withOpacity(0.7),
+                                fontFamily: FontFamilyHelper.fontFamily1,
+                              ),
                             ),
-                          ),
-                          verticalSpace(15),
-                          Image.asset(
-                            AppImages.appLogo,
-                            height: 80.h,
-                            width: 138.w,
-                          ),
-                        ],
+                            verticalSpace(15),
+                            Image.asset(
+                              AppImages.appLogo,
+                              height: 80.h,
+                              width: 138.w,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    // Image.asset(
-                    //   AppImages.homeManPhoto,
-                    //   height: 180.h,
-                    //   width: 180.w,
-                    // ),
-                  ],
-                )
+                      Container(
+                        width: 160,
+                        // color: Colors.red,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(AppImages.homeManPhoto),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

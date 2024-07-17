@@ -32,21 +32,8 @@ class ResetPassScreen extends StatelessWidget {
                 ),
               ),
             ),
-            verticalSpace(20),
-            // const CustomFadeInLeft(
-            //   duration: 600,
-            //   child: Text(
-            //     textAlign: TextAlign.center,
-            //     'A password verification will be sent to your email. You should follow up on At',
-            //     style: TextStyle(
-            //       color: Color(0xff878787),
-            //       fontSize: 15,
-            //       fontWeight: FontWeightHelper.regular,
-            //       fontFamily: FontFamilyHelper.fontFamily1,
-            //     ),
-            //   ),
-            // ),
-            verticalSpace(30),
+            // verticalSpace(20),
+            verticalSpace(50),
             CustomFadeInLeft(
               duration: 600,
               child: Row(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:symphony_app/core/theme/font/font_family_helper.dart';
+import 'package:symphony_app/core/theme/image/app_image.dart';
 
 import 'package:symphony_app/core/utils/spacing.dart';
 import 'package:symphony_app/features/home/presentation/widgets/home_card.dart';
@@ -20,19 +21,19 @@ class HomeScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 26.w,
-              vertical: 6.h,
+              vertical: 3.h,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Opinion',
                   style: TextStyle(
-                    fontSize: 20.sp,
+                    fontSize: 20,
                     fontFamily: FontFamilyHelper.fontFamily1,
                   ),
                 ),
-                verticalSpace(20),
+                verticalSpace(10),
                 // GridView.builder(
                 //     shrinkWrap: true,
                 //     physics: const NeverScrollableScrollPhysics(),
@@ -45,7 +46,37 @@ class HomeScreen extends StatelessWidget {
                 //     itemBuilder: (context, index) {
                 //       return const HomeCard();
                 //     }),
-                const HomeCard(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    HomeCard(
+                      onTap: () {},
+                      image: AppImages.card1,
+                      title: 'Speech to Text',
+                    ),
+                    HomeCard(
+                      onTap: () {},
+                      image: AppImages.card2,
+                      title: 'Text To Sign Language',
+                    ),
+                  ],
+                ),
+                verticalSpace(10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    HomeCard(
+                      onTap: () {},
+                      image: AppImages.card3,
+                      title: 'Sign Language Text To',
+                    ),
+                    HomeCard(
+                      onTap: () {},
+                      image: AppImages.card4,
+                      title: 'Learn Sign Language',
+                    ),
+                  ],
+                ),
               ],
             ),
           )
