@@ -8,6 +8,7 @@ import 'package:symphony_app/core/services/network/api/dio_consumer.dart';
 import 'package:symphony_app/features/auth/presentation/manager/forget_password_cubit/forget_password_cubit.dart';
 import 'package:symphony_app/features/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:symphony_app/features/auth/presentation/manager/register_cubit/register_cubit.dart';
+import 'package:symphony_app/features/auth/presentation/manager/reset_pawword_cubit/reset_password_cubit.dart';
 
 class SymphonyApp extends StatelessWidget {
   const SymphonyApp({
@@ -27,6 +28,9 @@ class SymphonyApp extends StatelessWidget {
         ),
         BlocProvider<ForgetPasswordCubit>(
           create: (context) => ForgetPasswordCubit(DioConsumer(dio: Dio())),
+        ),
+        BlocProvider<ResetPasswordCubit>(
+          create: (context) => ResetPasswordCubit(DioConsumer(dio: Dio())),
         ),
       ],
       child: ScreenUtilInit(
