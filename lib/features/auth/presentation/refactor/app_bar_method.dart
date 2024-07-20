@@ -6,6 +6,7 @@ import 'package:symphony_app/core/theme/font/font_weight_helper.dart';
 
 AppBar appBarMethod(BuildContext context, String title) {
   return AppBar(
+    backgroundColor: Colors.white,
     leading: IconButton(
         onPressed: () {
           context.pop();

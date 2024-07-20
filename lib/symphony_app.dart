@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:symphony_app/core/routes/app_router.dart';
 import 'package:symphony_app/core/routes/routes.dart';
 import 'package:symphony_app/core/services/network/api/dio_consumer.dart';
+import 'package:symphony_app/features/auth/presentation/manager/forget_password_cubit/forget_password_cubit.dart';
 import 'package:symphony_app/features/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:symphony_app/features/auth/presentation/manager/register_cubit/register_cubit.dart';
 
@@ -23,6 +24,9 @@ class SymphonyApp extends StatelessWidget {
         ),
         BlocProvider<LoginCubit>(
           create: (context) => LoginCubit(DioConsumer(dio: Dio())),
+        ),
+        BlocProvider<ForgetPasswordCubit>(
+          create: (context) => ForgetPasswordCubit(DioConsumer(dio: Dio())),
         ),
       ],
       child: ScreenUtilInit(
