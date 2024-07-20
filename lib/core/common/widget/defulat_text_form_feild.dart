@@ -12,6 +12,8 @@ class DefaultTextFormField extends StatelessWidget {
     required this.onChanged,
     required this.hintText,
     this.obscureText = false,
+    this.icon,
+    this.onPressed,
   });
   final TextEditingController textEditingController;
   final TextInputType keyboardType;
@@ -19,6 +21,8 @@ class DefaultTextFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
   final String hintText;
+  final IconData? icon;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +44,11 @@ class DefaultTextFormField extends StatelessWidget {
           fontSize: 18.sp,
         ),
         decoration: InputDecoration(
+          suffixIcon: IconButton(
+            onPressed: onPressed,
+            icon: Icon(icon),
+            color: AppColors.primaryColor,
+          ),
           filled: true,
           fillColor: AppColors.fillTextFieldColor,
           border: OutlineInputBorder(

@@ -74,10 +74,12 @@ class HomeScreen extends StatelessWidget {
                       HomeCard(
                         onTap: () {},
                         image: AppImages.card3,
-                        title: 'Sign Language Text To',
+                        title: 'Sign Language To Text',
                       ),
                       HomeCard(
-                        onTap: () {},
+                        onTap: () {
+                          context.pushName(Routes.learnLanguage);
+                        },
                         image: AppImages.card4,
                         title: 'Learn Sign Language',
                       ),

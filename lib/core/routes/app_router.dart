@@ -3,6 +3,7 @@ import 'package:symphony_app/features/auth/presentation/views/login_screen.dart'
 import 'package:symphony_app/features/auth/presentation/views/register_screen.dart';
 import 'package:symphony_app/features/auth/presentation/views/reset_pass_screen.dart';
 import 'package:symphony_app/features/home/presentation/views/home_screen.dart';
+import 'package:symphony_app/features/learn_language/presentation/views/learn_language.dart';
 import 'package:symphony_app/features/speech_to_text/presentation/views/speech_to_text_screen.dart';
 import 'package:symphony_app/features/welcome/presentation/views/welcome_screen.dart';
 
@@ -23,7 +24,7 @@ class AppRouter {
         );
       case Routes.registerScreen:
         return MaterialPageRoute(
-          builder: (_) => SignupScreen(),
+          builder: (_) => const RegisterScreen(),
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
@@ -40,6 +41,10 @@ class AppRouter {
       case Routes.speechToTextScreen:
         return MaterialPageRoute(
           builder: (_) => const SpeechToTextScreen(),
+        );
+      case Routes.learnLanguage:
+        return MaterialPageRoute(
+          builder: (_) => const LearnLanguage(),
         );
       default:
         return MaterialPageRoute(
