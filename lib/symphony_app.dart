@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,6 +38,9 @@ class SymphonyApp extends StatelessWidget {
         designSize: const Size(393, 852),
         minTextAdapt: true,
         child: MaterialApp(
+          // useInheritedMediaQuery: true,
+          // locale: DevicePreview.locale(context),
+          // builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           initialRoute: Routes.welcomeScreen,
           onGenerateRoute: appRouter.generateRoute,

@@ -91,7 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const TextAndImageLogo(),
                   // verticalSpace(15),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 26.w),
+                    padding: const EdgeInsets.symmetric(horizontal: 26),
                     child: Column(
                       children: [
                         CustomFadeInLeft(
@@ -101,12 +101,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               const DefaultIconContainer(
                                 icon: Icons.person,
                               ),
-                              horizontalSpace(22),
+                              // horizontalSpace(22),
+                              const Spacer(),
                               DefaultTextFormField(
                                 textEditingController:
                                     registerCubit.userNameController,
                                 keyboardType: TextInputType.name,
                                 validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'please enter user name';
+                                  }
                                   return null;
                                 },
                                 onChanged: (value) {},
@@ -123,12 +127,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               const DefaultIconContainer(
                                 icon: Icons.email,
                               ),
-                              horizontalSpace(22),
+                              // horizontalSpace(22),
+                              const Spacer(),
                               DefaultTextFormField(
                                 textEditingController:
                                     registerCubit.emailController,
                                 keyboardType: TextInputType.emailAddress,
                                 validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'Please Enter Your Name';
+                                  }
                                   return null;
                                 },
                                 onChanged: (value) {},
@@ -145,12 +153,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               const DefaultIconContainer(
                                 icon: Icons.phone,
                               ),
-                              horizontalSpace(22),
+                              // horizontalSpace(22),
+                              const Spacer(),
                               DefaultTextFormField(
                                 textEditingController:
                                     registerCubit.phoneController,
                                 keyboardType: TextInputType.number,
                                 validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'Please Enter Your Phone Number';
+                                  }
                                   return null;
                                 },
                                 onChanged: (value) {},
@@ -167,7 +179,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               const DefaultIconContainer(
                                 icon: Icons.lock,
                               ),
-                              horizontalSpace(22),
+                              // horizontalSpace(22),
+                              const Spacer(),
                               DefaultTextFormField(
                                 textEditingController:
                                     registerCubit.passwordController,
@@ -200,7 +213,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               const DefaultIconContainer(
                                 icon: Icons.lock,
                               ),
-                              horizontalSpace(22),
+                              // horizontalSpace(22),
+                              const Spacer(),
                               DefaultTextFormField(
                                 textEditingController:
                                     registerCubit.confirmPasswordController,

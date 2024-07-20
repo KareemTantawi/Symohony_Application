@@ -17,5 +17,6 @@ class AppImages {
   static const String forgetPassScreen = 'assets/images/forget_password.png';
   static const String welcomeCourse = 'assets/images/welcome_cource.png';
   static const String course1 = 'assets/images/cource 1.png';
+  static const String icon = 'assets/icons/icon.png';
   static const String course2 = 'assets/images/cource 2.png';
 }

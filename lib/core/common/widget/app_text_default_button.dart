@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:symphony_app/core/theme/colors/color.dart';
 import 'package:symphony_app/core/theme/font/font_family_helper.dart';
 
@@ -21,7 +20,7 @@ class AppDefaultTextButton extends StatelessWidget {
         title,
         style: TextStyle(
           color: AppColors.primaryColor.withOpacity(0.7),
-          fontSize: size.sp,
+          fontSize: size,
           fontFamily: FontFamilyHelper.fontFamily1,
         ),
       ),

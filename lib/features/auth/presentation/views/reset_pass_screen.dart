@@ -6,6 +6,8 @@ import 'package:symphony_app/core/common/widget/app_text_default_button.dart';
 import 'package:symphony_app/core/common/widget/default_icon_container.dart';
 import 'package:symphony_app/core/common/widget/defulat_text_form_feild.dart';
 import 'package:symphony_app/core/extension/extension.dart';
+import 'package:symphony_app/core/routes/routes.dart';
+import 'package:symphony_app/core/services/shared_pref/shared_pref.dart';
 import 'package:symphony_app/core/theme/colors/color.dart';
 import 'package:symphony_app/core/theme/image/app_image.dart';
 import 'package:symphony_app/core/utils/spacing.dart';
@@ -41,7 +43,43 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
   Widget build(BuildContext context) {
     final resetPasswordCubit = BlocProvider.of<ResetPasswordCubit>(context);
     return BlocConsumer<ResetPasswordCubit, ResetPasswordState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is ResetPasswordSuccessState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              backgroundColor: AppColors.primaryColor,
+              behavior: SnackBarBehavior.floating,
+              content: const Text(
+                'Go To The Email , and Click On The Link',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          );
+          context.pushName(Routes.loginScreen);
+          resetPasswordCubit.clearControllers();
+        } else if (state is ResetPasswordFailureState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              backgroundColor: AppColors.primaryColor,
+              behavior: SnackBarBehavior.floating,
+              content: Text(
+                state.errMessage,
+                style: const TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          );
+        }
+      },
       builder: (context, state) {
         return Scaffold(
           appBar: appBarMethod(
@@ -75,7 +113,8 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
                           const DefaultIconContainer(
                             icon: Icons.lock,
                           ),
-                          horizontalSpace(22),
+                          // horizontalSpace(22),
+                          const Spacer(),
                           DefaultTextFormField(
                             textEditingController:
                                 resetPasswordCubit.newPasswordController,
@@ -105,7 +144,8 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
                           const DefaultIconContainer(
                             icon: Icons.lock,
                           ),
-                          horizontalSpace(22),
+                          // horizontalSpace(22),
+                          const Spacer(),
                           DefaultTextFormField(
                             textEditingController:
                                 resetPasswordCubit.confirmNewPasswordController,
@@ -143,6 +183,9 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
                                     .validate()) {
                                   resetPasswordCubit.resetPassword();
                                 }
+                                print(
+                                  "The Reset Token is: ${CacheHelper.sharedPreferences.getString('reset_token')}",
+                                );
                               },
                               title: 'Reset',
                             ),

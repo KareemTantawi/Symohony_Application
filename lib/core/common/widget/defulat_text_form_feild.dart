@@ -27,21 +27,21 @@ class DefaultTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 255.w,
+      width: 254.w,
       height: 54.h,
       child: TextFormField(
         controller: textEditingController,
-        cursorRadius: const Radius.circular(12),
-        cursorWidth: 2.w,
-        cursorHeight: 22.h,
+        cursorRadius: Radius.circular(12.r),
+        cursorWidth: 2,
+        cursorHeight: 22,
         keyboardType: keyboardType,
         obscureText: obscureText,
         validator: validator,
         onChanged: onChanged,
         cursorColor: AppColors.primaryColor,
-        style: TextStyle(
+        style: const TextStyle(
           color: AppColors.primaryColor,
-          fontSize: 18.sp,
+          fontSize: 18,
         ),
         decoration: InputDecoration(
           suffixIcon: IconButton(
@@ -55,9 +55,9 @@ class DefaultTextFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.r),
             borderSide: BorderSide.none,
           ),
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: 14.w,
-            vertical: 13.h,
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 14,
+            vertical: 13,
           ),
           hintText: hintText,
           hintStyle: TextStyle(

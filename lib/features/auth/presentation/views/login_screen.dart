@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:symphony_app/core/common/widget/app_defailt_button.dart';
 import 'package:symphony_app/core/common/widget/app_text_default_button.dart';
 import 'package:symphony_app/core/common/widget/default_icon_container.dart';
-import 'package:symphony_app/core/common/widget/default_show_dialog_app.dart';
 import 'package:symphony_app/core/common/widget/defulat_text_form_feild.dart';
 import 'package:symphony_app/core/extension/extension.dart';
 import 'package:symphony_app/core/routes/routes.dart';
@@ -86,9 +84,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   const ImageContainer(),
                   SingleChildScrollView(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 26.w,
-                        vertical: 12.h,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 26,
+                        vertical: 12,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,12 +103,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                 const DefaultIconContainer(
                                   icon: Icons.email_rounded,
                                 ),
-                                horizontalSpace(22),
+                                // horizontalSpace(22),
+                                // const SizedBox(
+                                //   width: 20,
+                                // ),
+                                const Spacer(),
                                 DefaultTextFormField(
                                   textEditingController:
                                       loginCubit.emailController,
                                   keyboardType: TextInputType.emailAddress,
                                   validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return 'Please Enter Your Email';
+                                    }
                                     return null;
                                   },
                                   onChanged: (value) {},
@@ -124,16 +129,24 @@ class _LoginScreenState extends State<LoginScreen> {
                             duration: 600,
                             child: Row(
                               children: [
+                                // const Spacer(),
                                 const DefaultIconContainer(
                                   icon: Icons.lock,
                                 ),
-                                horizontalSpace(22),
+                                // horizontalSpace(22),
+                                // const SizedBox(
+                                //   width: 20,
+                                // ),
+                                const Spacer(),
                                 DefaultTextFormField(
                                   textEditingController:
                                       loginCubit.passwordController,
                                   obscureText: _obscureText,
                                   keyboardType: TextInputType.visiblePassword,
                                   validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return 'Please Enter Your Password';
+                                    }
                                     return null;
                                   },
                                   icon: _obscureText

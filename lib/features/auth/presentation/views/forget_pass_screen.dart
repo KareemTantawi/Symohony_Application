@@ -33,7 +33,7 @@ class ForgetPassScreen extends StatelessWidget {
               backgroundColor: AppColors.primaryColor,
               behavior: SnackBarBehavior.floating,
               content: const Text(
-                'Password verification sent to your email',
+                'Success verification',
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -91,7 +91,8 @@ class ForgetPassScreen extends StatelessWidget {
                           const DefaultIconContainer(
                             icon: Icons.email_rounded,
                           ),
-                          horizontalSpace(20),
+                          // horizontalSpace(20),
+                          const Spacer(),
                           DefaultTextFormField(
                             keyboardType: TextInputType.emailAddress,
                             validator: (value) {

@@ -12,13 +12,13 @@ class ImageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.height * .45,
+      height: context.height * .453,
       width: double.infinity,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(24),
-          bottomRight: Radius.circular(24),
+          bottomLeft: Radius.circular(24.r),
+          bottomRight: Radius.circular(24.r),
         ),
       ),
       child: Column(
@@ -26,7 +26,7 @@ class ImageContainer extends StatelessWidget {
         children: [
           Image.asset(
             AppImages.loginLogo,
-            height: 280.h,
+            height: 280,
           ),
           // verticalSpace(12),
           const Text(

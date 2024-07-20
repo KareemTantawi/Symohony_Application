@@ -18,12 +18,12 @@ class TextAndImageLogo extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(left: 26.w),
-          child: Text(
+          child: const Text(
             'Create \nAccount',
             style: TextStyle(
               letterSpacing: 2,
               color: AppColors.primaryColor,
-              fontSize: 34.sp,
+              fontSize: 34,
               fontWeight: FontWeightHelper.semiBold,
               fontFamily: FontFamilyHelper.fontFamily1,
             ),

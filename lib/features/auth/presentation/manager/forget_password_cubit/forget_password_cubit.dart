@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:symphony_app/core/services/network/api/api_endpoints.dart';
 import 'package:symphony_app/core/services/network/api/dio_consumer.dart';
+import 'package:symphony_app/core/services/shared_pref/shared_pref.dart';
 import 'package:symphony_app/features/auth/data/models/forget_password_model.dart';
 import 'package:symphony_app/features/auth/presentation/manager/forget_password_cubit/forget_password_state.dart';
 
@@ -28,6 +29,10 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       );
       if (response != null && response is Map<String, dynamic>) {
         forgetPasswordModel = ForgetPasswordModel.fromJson(response);
+        CacheHelper.sharedPreferences.setString(
+          'reset_token',
+          forgetPasswordModel!.resetToken,
+        );
 
         emit(ForgetPasswordSuccessState());
       } else {

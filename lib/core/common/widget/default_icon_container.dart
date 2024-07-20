@@ -14,8 +14,8 @@ class DefaultIconContainer extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 55.h,
-          width: 55.w,
+          height: 55,
+          width: 55,
           decoration: BoxDecoration(
             color: AppColors.primaryColor,
             borderRadius: BorderRadius.circular(12.r),
@@ -23,7 +23,7 @@ class DefaultIconContainer extends StatelessWidget {
           child: Icon(
             icon,
             color: Colors.white,
-            size: 32.sp,
+            size: 32,
           ),
         ),
         // horizontalSpace(22),

@@ -25,9 +25,9 @@ class WelcomeScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            height: 220,
+            height: 220.h,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 55.w),
+              padding: const EdgeInsets.symmetric(horizontal: 55),
               child: Column(
                 children: [
                   const CustomFadeInUp(
@@ -60,6 +60,7 @@ class WelcomeScreen extends StatelessWidget {
                       title: 'Sign up',
                     ),
                   ),
+                  verticalSpace(8),
                 ],
               ),
             ),

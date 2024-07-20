@@ -23,11 +23,11 @@ Future<dynamic> defaultShowDialogApp(BuildContext context) {
               height: 80.h,
             ),
             verticalSpace(10),
-            Text(
+            const Text(
               'Done',
               style: TextStyle(
                 color: AppColors.alertDialogColor,
-                fontSize: 26.sp,
+                fontSize: 26,
                 fontFamily: FontFamilyHelper.fontFamily1,
                 fontWeight: FontWeightHelper.semiBold,
               ),

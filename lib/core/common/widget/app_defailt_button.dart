@@ -29,17 +29,17 @@ class AppDefaultButton extends StatelessWidget {
             end: Alignment.center,
             // stops: const [0.28, 0.2],
           ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(16),
+          borderRadius: BorderRadius.all(
+            Radius.circular(16.r),
           ),
         ),
         child: Align(
           alignment: Alignment.center,
           child: Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
-              fontSize: 28.sp,
+              fontSize: 28,
               fontFamily: FontFamilyHelper.fontFamily1,
               fontWeight: FontWeightHelper.regular,
             ),

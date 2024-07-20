@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:symphony_app/core/theme/colors/color.dart';
 import 'package:symphony_app/core/theme/font/font_family_helper.dart';
 
@@ -8,10 +7,10 @@ class WelcomeText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       'Welcome To Symphony ',
       style: TextStyle(
-        fontSize: 20.sp,
+        fontSize: 18,
         fontFamily: FontFamilyHelper.fontFamily1,
         color: AppColors.primaryColor,
       ),

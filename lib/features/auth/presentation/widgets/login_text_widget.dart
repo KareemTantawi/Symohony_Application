@@ -12,10 +12,10 @@ class LoginTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       'Login',
       style: TextStyle(
-        fontSize: 32.sp,
+        fontSize: 32,
         fontFamily: FontFamilyHelper.fontFamily1,
         color: AppColors.primaryColor,
         fontWeight: FontWeightHelper.semiBold,
